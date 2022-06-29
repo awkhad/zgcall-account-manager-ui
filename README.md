@@ -1,4 +1,4 @@
-# Fonoster — Web UI
+# Fonoster — Account Manager (Billing)
 
 Web UI to create powerful voice applications with Fonoster's API
 

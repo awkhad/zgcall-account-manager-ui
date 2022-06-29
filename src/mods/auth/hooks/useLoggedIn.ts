@@ -1,6 +1,7 @@
 import { useSession } from 'next-auth/react'
 import { useMemo } from 'react'
 
+import { usePlan } from '@/mods/billing/hooks/usePlan'
 import { useGetUserLogged } from '@/mods/users/hooks/useGetUserLogged'
 
 export enum SESSION_STATUS {
@@ -32,9 +33,13 @@ export const useLoggedIn = () => {
     enabled: isAuthenticated,
   })
 
+  const { plan } = usePlan(user?.limiter)
+
   return {
+    plan,
     user: {
       ...session?.user,
+      name: 'loading...',
       ...user,
       avatar: user?.avatar || session?.user?.image,
     },

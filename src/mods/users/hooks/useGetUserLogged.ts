@@ -26,7 +26,10 @@ export const useGetUserLogged = (
   )
 
   return {
-    user: data,
+    user: {
+      ...data,
+      status: data?.status || 'active',
+    },
     isLoading,
     isSuccess,
   }

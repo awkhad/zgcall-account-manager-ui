@@ -243,7 +243,7 @@ table .thead--plans th {
 
 .pf-spinner-wrapper {
   align-items: center;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
@@ -253,6 +253,7 @@ table .thead--plans th {
   height: 100%;
   z-index: 1;
   animation: fade 0.3s ease-in-out;
+  background-color: #272930;
 }
 
 .container {
@@ -336,4 +337,8 @@ table .thead--plans th {
 
 ::-webkit-scrollbar-thumb {
   @apply bg-gray-600;
+}
+
+.btn-full .sbui-btn-container {
+  width: 100%;
 }

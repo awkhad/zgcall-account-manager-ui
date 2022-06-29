@@ -10,7 +10,6 @@ import { injectStyle } from 'react-toastify/dist/inject-style'
 
 import type { AppProps } from '@/@types'
 import { Authenticated } from '@/mods/auth/components/Authenticated'
-import { Unauthenticated } from '@/mods/auth/components/Unauthenticated'
 import { Layout } from '@/mods/shared/components/layouts'
 import { Progress } from '@/mods/shared/components/Progress'
 import { getQueryClient } from '@/mods/shared/libs/queryClient'
@@ -36,17 +35,11 @@ const Application = ({
 
             <ReactQueryDevtools initialIsOpen={false} />
 
-            {Component?.isProtected ? (
-              <Authenticated>
-                <Layout>
-                  <Component {...pageProps} />
-                </Layout>
-              </Authenticated>
-            ) : (
-              <Unauthenticated>
+            <Authenticated>
+              <Layout>
                 <Component {...pageProps} />
-              </Unauthenticated>
-            )}
+              </Layout>
+            </Authenticated>
           </NextQueryParamProvider>
         </Hydrate>
       </QueryClientProvider>
