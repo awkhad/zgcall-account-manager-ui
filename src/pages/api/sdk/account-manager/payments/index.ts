@@ -10,11 +10,15 @@ export default async function handle(
 ) {
   const manager = new AccountManager({
     ...(await getUserLogged(req)),
-    endpoint: '0.0.0.0:50052',
+    endpoint: process.env.AM_SERVER_ENDPOINT,
   })
 
   const handlers = {
     get: async () => manager.listPaymentMethods({}),
+    post: async () =>
+      manager.addPaymentMethod({
+        paymentMethodId: req.body.paymentMethodId,
+      }),
   }
 
   return requestHandler({ handlers, req, res })

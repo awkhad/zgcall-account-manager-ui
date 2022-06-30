@@ -14,7 +14,10 @@ export default async function handle(
   })
 
   const handlers = {
-    get: async () => manager.listInvoices({}),
+    delete: async () =>
+      manager.removePaymentMethod({
+        paymentMethodId: req.query.paymentMethodId as string,
+      }),
   }
 
   return requestHandler({ handlers, req, res })

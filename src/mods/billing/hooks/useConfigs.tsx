@@ -11,7 +11,7 @@ export const useConfigs = (queryKey = 'stripe_configs') => {
       async () => (await API.get('/account-manager/configs')).data.data
     )
 
-  const publishableKey = useMemo(() => data?.publishableKey ?? [], [data])
+  const publishableKey = useMemo(() => data?.publishableKey ?? '', [data])
 
   return {
     publishableKey,

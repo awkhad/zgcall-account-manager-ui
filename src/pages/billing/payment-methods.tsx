@@ -1,10 +1,14 @@
-import { ChangePlan } from '@/mods/billing/components/change-plan'
+import {
+  AddPaymentMethod,
+  useAddPaymentMethodPanel,
+} from '@/mods/billing/components/add-payment-method'
 import { usePaymentMethods } from '@/mods/billing/hooks/usePaymentMethods'
 import { classes } from '@/mods/shared/helpers/classes'
 import { Button, Spinner, Title } from '@/ui'
 
 export function PaymentMethods() {
   const { paymentMethods, isLoading } = usePaymentMethods()
+  const { open } = useAddPaymentMethodPanel()
 
   if (isLoading) return <Spinner />
 
@@ -38,13 +42,13 @@ export function PaymentMethods() {
                 </div>
               ))}
             </div>
-            <Button className="mt-2 w-full" isFullWidth>
+            <Button className="mt-2 w-full" isFullWidth onClick={() => open()}>
               Add payment method
             </Button>
           </div>
         </main>
       </div>
-      <ChangePlan />
+      <AddPaymentMethod />
     </>
   )
 }

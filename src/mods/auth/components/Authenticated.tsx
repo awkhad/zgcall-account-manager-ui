@@ -1,33 +1,24 @@
+import { Elements } from '@stripe/react-stripe-js'
+import { loadStripe } from '@stripe/stripe-js'
 import { NextPage } from 'next'
-import { useEffect } from 'react'
 
+import { useConfigs } from '@/mods/billing/hooks/useConfigs'
+import NotFound from '@/pages/404'
 import { Spinner } from '@/ui/Spinner'
 
 import { useLoggedIn } from '../hooks/useLoggedIn'
-import { useRedirect } from '../hooks/useRedirect'
 
 export const Authenticated: NextPage = ({ children }) => {
   const { isLoading, isAuthenticated } = useLoggedIn()
-  const {
-    hasRedirectToChecked,
-    setHasRedirectToChecked,
-    redirectToSignIn,
-    redirectToNextPage,
-  } = useRedirect()
+  const { publishableKey } = useConfigs()
 
-  useEffect(() => {
-    if (isLoading) return
+  if (isLoading || !publishableKey) return <Spinner />
 
-    isAuthenticated ? redirectToNextPage() : redirectToSignIn()
-
-    setHasRedirectToChecked(true)
-  }, [
-    isLoading,
-    isAuthenticated,
-    redirectToSignIn,
-    redirectToNextPage,
-    setHasRedirectToChecked,
-  ])
-
-  return isAuthenticated && hasRedirectToChecked ? <>{children}</> : <Spinner />
+  return isAuthenticated ? (
+    <>
+      <Elements stripe={loadStripe(publishableKey)}>{children}</Elements>
+    </>
+  ) : (
+    <NotFound />
+  )
 }

@@ -5,6 +5,7 @@ import {
   ChangePlan,
   useChangePlanPanel,
 } from '@/mods/billing/components/change-plan'
+import { usePaymentMethods } from '@/mods/billing/hooks/usePaymentMethods'
 import { classes } from '@/mods/shared/helpers/classes'
 import { getPrice } from '@/mods/shared/helpers/price'
 import { Button, Spinner, Text, Title } from '@/ui'
@@ -12,13 +13,14 @@ import { Button, Spinner, Text, Title } from '@/ui'
 export function Account() {
   const { plan, user } = useLoggedIn()
   const { open } = useChangePlanPanel()
+  const { paymentMethods, isLoading } = usePaymentMethods()
 
   const isStarter = useCallback(
     () => plan && plan.name.toLowerCase() === 'starter',
     [plan]
   )
 
-  if (!plan) return <Spinner />
+  if (!plan || isLoading) return <Spinner />
 
   return (
     <>
@@ -61,9 +63,20 @@ export function Account() {
               </div>
             </div>
 
-            <Button className="mt-8 w-full" isFullWidth onClick={() => open()}>
-              Change plan
-            </Button>
+            {paymentMethods.length === 0 ? (
+              <Text className="mt-4">
+                Add a payment method to enable plan upgrade.
+              </Text>
+            ) : (
+              <Button
+                className="mt-8 w-full"
+                isFullWidth
+                onClick={() => open()}
+                disabled={paymentMethods.length === 0}
+              >
+                Change plan
+              </Button>
+            )}
           </div>
         </main>
       </div>
