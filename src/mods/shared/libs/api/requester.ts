@@ -5,7 +5,7 @@ import { Notifier } from '@/mods/shared/components/Notification'
 import { config } from '../../constants/config'
 
 const API = axios.create({
-  baseURL: `${config.APP_URL}/billing/api/sdk`,
+  baseURL: `${config.APP_URL}/api/sdk`,
 })
 
 API.interceptors.response.use(
