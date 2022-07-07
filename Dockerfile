@@ -9,7 +9,9 @@ WORKDIR /app
 RUN apk add --no-cache libc6-compat g++ cmake make python3 git
 
 # copy the package.json to install dependencies
-COPY package.json yarn.lock ./
+# FIXME: Add yarn.locl
+# COPY package.json yarn.lock ./
+COPY package.json ./
 RUN --mount=type=cache,id=yarn,sharing=locked,target=/usr/local/share/.cache/yarn yarn install --frozen-lockfile
 
 ##

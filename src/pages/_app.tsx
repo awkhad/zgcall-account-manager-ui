@@ -26,7 +26,7 @@ const Application = ({
   }, [])
 
   return (
-    <SessionProvider session={session}>
+    <SessionProvider session={session} basePath="/billing/api/auth">
       <QueryClientProvider client={queryClient}>
         <Hydrate state={pageProps?.dehydratedState}>
           <NextQueryParamProvider>

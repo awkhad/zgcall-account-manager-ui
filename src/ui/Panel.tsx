@@ -119,7 +119,7 @@ export const Panel: React.FC<Props> = ({
                         <div>
                           <img
                             className="block h-10 w-auto mb-8"
-                            src="/isotipo.svg"
+                            src="/billing/isotipo.svg"
                             alt="Fonoster"
                           />
                           <Title level={3} className="mb-6">
