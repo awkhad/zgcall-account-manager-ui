@@ -328,16 +328,16 @@
     minimatch "^3.1.2"
     strip-json-comments "^3.1.1"
 
-"@fonoster/account-manager@git+https://efraa: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@github.com/fonoster/account-manager.git#pointing_to_internal_grpc_creds":
+"@fonoster/account-manager@git+https://efraa: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@github.com/fonoster/account-manager.git":
   version "0.1.0"
-  resolved "git+https://efraa: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@github.com/fonoster/account-manager.git#1438a57912cacb4d6baec478e903fd225d7e0347"
+  resolved "git+https://efraa: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@github.com/fonoster/account-manager.git#bba414b34169182252b7c0c3bf286e25d35638d1"
   dependencies:
-    "@fonoster/auth" "^0.3.9"
-    "@fonoster/common" "^0.3.9"
-    "@fonoster/core" "^0.3.10"
-    "@fonoster/logger" "^0.3.9"
+    "@fonoster/auth" "^0.3.12"
+    "@fonoster/common" "^0.3.12"
+    "@fonoster/core" "^0.3.12"
+    "@fonoster/logger" "^0.3.12"
     "@fonoster/sdk" "^0.3.12"
-    "@fonoster/users" "^0.3.9"
+    "@fonoster/users" "^0.3.12"
     "@grpc/grpc-js" "^1.6.7"
     "@opentelemetry/api" "^1.0.4"
     dotenv "^16.0.1"
@@ -373,7 +373,7 @@
     "@fonoster/logger" "^0.3.12"
     "@opentelemetry/api" "^1.0.4"
 
-"@fonoster/auth@^0.3.12", "@fonoster/auth@^0.3.9":
+"@fonoster/auth@^0.3.12":
   version "0.3.12"
   resolved "https://registry.yarnpkg.com/@fonoster/auth/-/auth-0.3.12.tgz#716843104fb047454765b281bb63294a0c37e224"
   integrity sha512-3dCFflDCwDZiVmTSijIIf3MNzh2muWakgc5uf0DIu/pGe5OtS9p8XEazoWtAwhNQa9l73M7YiVGg+Hd9AS21GA==
@@ -418,7 +418,7 @@
     btoa "^1.2.1"
     jsonwebtoken "^8.5.1"
 
-"@fonoster/common@^0.3.12", "@fonoster/common@^0.3.9":
+"@fonoster/common@^0.3.12":
   version "0.3.12"
   resolved "https://registry.yarnpkg.com/@fonoster/common/-/common-0.3.12.tgz#30c35dcc74663ea40e9743b5db80a3f231142fdc"
   integrity sha512-DzZB63eTFj0pcpxRcp0Tt3JEZwiY283gpNpx5DNijKg11K4SkF7GT8kIxVO8w0IvJyd2rVE6Il4UaJzI/qb1HA==
@@ -442,7 +442,7 @@
     deepmerge "^4.2.2"
     grpc-interceptors "github:fonoster/node-grpc-interceptors"
 
-"@fonoster/core@^0.3.10", "@fonoster/core@^0.3.12":
+"@fonoster/core@^0.3.12":
   version "0.3.12"
   resolved "https://registry.yarnpkg.com/@fonoster/core/-/core-0.3.12.tgz#50e6b12b169b011d9d9d6713fb7b450a5c8d130a"
   integrity sha512-HDrOC2kzK7evY0QgfrC53AaljS+MRSg5TFl27UGhc7eqERDbd7cCBC1TewdOK0Q7vz/lrjvXhtC2z5JjmCh/cQ==
@@ -509,7 +509,7 @@
     tar "^6.1.0"
     walk "^2.3.14"
 
-"@fonoster/logger@^0.3.11", "@fonoster/logger@^0.3.12", "@fonoster/logger@^0.3.9":
+"@fonoster/logger@^0.3.11", "@fonoster/logger@^0.3.12":
   version "0.3.12"
   resolved "https://registry.yarnpkg.com/@fonoster/logger/-/logger-0.3.12.tgz#9e396b3f517aeffde128edb29aa31986f589fae3"
   integrity sha512-nVqX/LS1LL1LB6NJ68rHNZ0YllJtWnHgbKgBwkrgKFqQtV038S3GBi5ZwPD7Qcav58LbnzrkgV/RBReN4gcAaQ==
@@ -648,7 +648,7 @@
     tar "^6.1.0"
     walk "^2.3.14"
 
-"@fonoster/users@^0.3.12", "@fonoster/users@^0.3.9":
+"@fonoster/users@^0.3.12":
   version "0.3.12"
   resolved "https://registry.yarnpkg.com/@fonoster/users/-/users-0.3.12.tgz#f769d93ff05da2e5ac2fcb17c023834ce54283b1"
   integrity sha512-HY0cpr4hV24PFTc3PqL8tJA3IYc2CSejq4aHQkjvlJZbOOBMnUkI1engT1vLtviZ3KB921Fk/43uUPMPX3BZmg==
@@ -2884,9 +2884,9 @@ ee-first@1.1.1:
   integrity sha512-WMwm9LhRUo+WUaRN+vRuETqG89IgZphVSNkdFgeb6sS/E4OrDIN7t48CAewSHXc6C8lefD8KKfr5vY61brQlow==
 
 electron-to-chromium@^1.4.172:
-  version "1.4.183"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.183.tgz#2ea25fa3089cc68dae18c8dcb19ed0509631ef82"
-  integrity sha512-PnJvlREshGPh3M5tgReLgqbOQ61yd4Knwo39Cxy9SMfqwX9q5iRy+JioQC1LyKx1IBAH2zoctAWblhgM2kbEKQ==
+  version "1.4.184"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.184.tgz#381d4d111fc82d3376ed690dfb621e675f9078a9"
+  integrity sha512-IADi390FRdvxWfVX3hjzfTDNVHiTqVo9ar53/7em/SfhUG9YcjVhyQecY/XwmBHRKden/wFud7RWOUH7+7LFng==
 
 elliptic@^6.5.3:
   version "6.5.4"
@@ -5466,9 +5466,9 @@ node-int64@^0.4.0:
   integrity sha512-O5lz91xSOeoXP6DulyHfllpq+Eg00MWitZIbtPfoSEvqIHdl5gfcY6hYzDWnj0qD5tz52PI08u9qUvSVeUBeHw==
 
 node-releases@^2.0.5:
-  version "2.0.5"
-  resolved "https://registry.yarnpkg.com/node-releases/-/node-releases-2.0.5.tgz#280ed5bc3eba0d96ce44897d8aee478bfb3d9666"
-  integrity sha512-U9h1NLROZTq9uE1SNffn6WuPDg8icmi3ns4rEl/oTfIle4iLjTliCzgTsbaIFMq/Xn078/lfY/BL0GWZ+psK4Q==
+  version "2.0.6"
+  resolved "https://registry.yarnpkg.com/node-releases/-/node-releases-2.0.6.tgz#8a7088c63a55e493845683ebf3c828d8c51c5503"
+  integrity sha512-PiVXnNuFm5+iYkLBNeq5211hvO38y63T0i2KKh2KnUs3RpzJ+JtODFjkD8yjLwnDkTYF1eKXheUwdssR+NRZdg==
 
 node-vault@^0.9.21:
   version "0.9.22"
