@@ -8,19 +8,20 @@ import { Title } from '@/ui'
 
 import { config } from '../../constants/config'
 import { classes } from '../../helpers/classes'
+import { getPath } from '../../helpers/getPath'
 import { Notification } from '../Notification'
 
 const navs = [
   {
-    href: '/billing/account',
+    href: '/account',
     label: 'Account',
   },
   {
-    href: '/billing',
+    href: '/',
     label: 'Bills',
   },
   {
-    href: '/billing/payment-methods',
+    href: '/payment-methods',
     label: 'Payment methods',
   },
 ]
@@ -39,7 +40,7 @@ export const Header = () => {
               <div className="flex-shrink-0 flex items-center">
                 <img
                   className="block h-8 w-auto"
-                  src="/isotipo.svg"
+                  src={getPath('isotipo.svg')}
                   alt="Fonoster"
                 />
               </div>
