@@ -8,6 +8,7 @@ import { Title } from '@/ui'
 
 import { config } from '../../constants/config'
 import { classes } from '../../helpers/classes'
+import { getPath } from '../../helpers/getPath'
 import { Notification } from '../Notification'
 
 const navs = [
@@ -39,7 +40,7 @@ export const Header = () => {
               <div className="flex-shrink-0 flex items-center">
                 <img
                   className="block h-8 w-auto"
-                  src="/billing/isotipo.svg"
+                  src={getPath('isotipo.svg')}
                   alt="Fonoster"
                 />
               </div>

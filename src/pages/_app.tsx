@@ -1,7 +1,6 @@
 import '../styles/styles.css'
 import '@/mods/shared/libs/telemetry'
 
-import { SessionProvider } from 'next-auth/react'
 import { NextQueryParamProvider } from 'next-query-params'
 import React, { useEffect } from 'react'
 import { Hydrate, QueryClientProvider } from 'react-query'
@@ -15,10 +14,7 @@ import { Progress } from '@/mods/shared/components/Progress'
 import { getQueryClient } from '@/mods/shared/libs/queryClient'
 import { Meta } from '@/ui'
 
-const Application = ({
-  Component,
-  pageProps: { session, ...pageProps },
-}: AppProps) => {
+const Application = ({ Component, pageProps: { ...pageProps } }: AppProps) => {
   const { current: queryClient } = React.useRef(getQueryClient())
 
   useEffect(() => {
@@ -26,24 +22,22 @@ const Application = ({
   }, [])
 
   return (
-    <SessionProvider session={session} basePath="/billing/api/auth">
-      <QueryClientProvider client={queryClient}>
-        <Hydrate state={pageProps?.dehydratedState}>
-          <NextQueryParamProvider>
-            <Meta />
-            <Progress />
+    <QueryClientProvider client={queryClient}>
+      <Hydrate state={pageProps?.dehydratedState}>
+        <NextQueryParamProvider>
+          <Meta />
+          <Progress />
 
-            <ReactQueryDevtools initialIsOpen={false} />
+          <ReactQueryDevtools initialIsOpen={false} />
 
-            <Authenticated>
-              <Layout>
-                <Component {...pageProps} />
-              </Layout>
-            </Authenticated>
-          </NextQueryParamProvider>
-        </Hydrate>
-      </QueryClientProvider>
-    </SessionProvider>
+          <Authenticated>
+            <Layout>
+              <Component {...pageProps} />
+            </Layout>
+          </Authenticated>
+        </NextQueryParamProvider>
+      </Hydrate>
+    </QueryClientProvider>
   )
 }
 

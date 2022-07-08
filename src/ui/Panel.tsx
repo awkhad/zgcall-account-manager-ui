@@ -10,6 +10,7 @@ import {
   Stepper,
 } from '@/mods/shared/components/Stepper/Stepper'
 import { classes } from '@/mods/shared/helpers/classes'
+import { getPath } from '@/mods/shared/helpers/getPath'
 import { Button, Text, Title } from '@/ui'
 
 interface Props {
@@ -119,7 +120,7 @@ export const Panel: React.FC<Props> = ({
                         <div>
                           <img
                             className="block h-10 w-auto mb-8"
-                            src="/billing/isotipo.svg"
+                            src={getPath('isotipo.svg')}
                             alt="Fonoster"
                           />
                           <Title level={3} className="mb-6">

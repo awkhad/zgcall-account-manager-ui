@@ -8,7 +8,7 @@ services:
   apiserver:
     image: traefik:v2.8
     # Enables the web UI and tells Traefik to listen to docker
-    command: 
+    command:
       - "--log.level=DEBUG"
       - "--api.insecure=true"
       - "--providers.docker"
@@ -16,7 +16,7 @@ services:
       - "80:80"
       - "8080:8080"
     networks:
-      - fonoster      
+      - fonoster
     volumes:
       # So that Traefik can listen to the Docker events
       - /var/run/docker.sock:/var/run/docker.sock
@@ -46,13 +46,13 @@ services:
   account-manager-ui:
     image: fonoster/account-manager-ui:latest
     build:
-      context: .    
+      context: .
     # FIXME
     healthcheck:
       test: ["CMD", "echo", "test"]
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.account-manager-ui.rule=Host(`localhost`) && PathPrefix(`/billing`)"
+      - "traefik.http.routers.account-manager-ui.rule=Host(`localhost`) && PathPrefix(`${APP_BASE_PATH}`)"
       - "traefik.http.services.account-manager-ui.loadbalancer.server.port=3000"
     expose:
       - 3000

@@ -1,11 +1,27 @@
 import axios from 'axios'
 
+import { getUserLogged } from '@/mods/auth/hooks/useLoggedIn'
 import { Notifier } from '@/mods/shared/components/Notification'
 
-import { config } from '../../constants/config'
+import { getBaseAPI } from '../../helpers/getPath'
 
 const API = axios.create({
-  baseURL: `${config.APP_URL}/billing/api/sdk`,
+  baseURL: getBaseAPI(),
+})
+
+API.interceptors.request.use(config => {
+  const user = getUserLogged()
+
+  return user
+    ? {
+        ...config,
+        headers: {
+          ...config?.headers,
+          'X-Access-Key-Id': user.accessKeyId,
+          'X-Access-Key-Secret': user.accessKeySecret,
+        },
+      }
+    : config
 })
 
 API.interceptors.response.use(

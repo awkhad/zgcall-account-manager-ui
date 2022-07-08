@@ -1,35 +1,32 @@
-import { useSession } from 'next-auth/react'
 import { useMemo } from 'react'
 
 import { usePlan } from '@/mods/billing/hooks/usePlan'
+import { Storage } from '@/mods/shared/helpers/Storage'
 import { useGetUserLogged } from '@/mods/users/hooks/useGetUserLogged'
 
-export enum SESSION_STATUS {
-  IS_LOADING = 'loading',
-  AUTH = 'authenticated',
-  UNAUTH = 'unauthenticated',
+export const userStore = new Storage('fonoster.user')
+
+export const getUserLogged = () => {
+  const userFromStore = userStore.get()
+
+  return userFromStore
+    ? (JSON.parse(userFromStore) as {
+        accessKeyId: string
+        accessKeySecret: string
+      })
+    : null
 }
 
 export const useLoggedIn = () => {
-  const { data: session, status } = useSession()
-
-  const isLoading = useMemo(
-    () => status === SESSION_STATUS.IS_LOADING,
-    [status]
-  )
+  const session = useMemo(() => getUserLogged(), [])
 
   const isAuthenticated = useMemo(
-    () => status === SESSION_STATUS.AUTH,
-    [status]
-  )
-
-  const isUnauthenticated = useMemo(
-    () => status === SESSION_STATUS.UNAUTH,
-    [status]
+    () => Boolean(session && session.accessKeyId && session.accessKeySecret),
+    [session]
   )
 
   const { user } = useGetUserLogged({
-    ref: session?.user?.accessKeyId as string,
+    ref: session?.accessKeyId as string,
     enabled: isAuthenticated,
   })
 
@@ -38,14 +35,9 @@ export const useLoggedIn = () => {
   return {
     plan,
     user: {
-      ...session?.user,
       name: 'loading...',
       ...user,
-      avatar: user?.avatar || session?.user?.image,
     },
-    status,
-    isLoading,
     isAuthenticated,
-    isUnauthenticated,
   }
 }
