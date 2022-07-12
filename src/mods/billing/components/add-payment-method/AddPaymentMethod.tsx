@@ -3,7 +3,7 @@ import { useCallback, useMemo, useState } from 'react'
 
 import { useLoggedIn } from '@/mods/auth/hooks/useLoggedIn'
 import { Notifier } from '@/mods/shared/components/Notification'
-import { Panel } from '@/ui'
+import { Panel, Text } from '@/ui'
 
 import { useAddPaymentMethod } from '../../hooks/useAddPaymentMethod'
 import { useAddPaymentMethodPanel } from './useAddPaymentMethodPanel'
@@ -113,6 +113,9 @@ export const AddPaymentMethod = () => {
             },
           }}
         />
+        <Text className="m-0 p-0 mt-2">
+          It will be used as the default payment method.
+        </Text>
       </>
     </Panel>
   )
