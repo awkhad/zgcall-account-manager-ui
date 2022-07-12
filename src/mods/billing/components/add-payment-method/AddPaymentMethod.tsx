@@ -72,6 +72,7 @@ export const AddPaymentMethod = () => {
 
     if (error) {
       Notifier.error(error.message)
+      setIsLoading(false)
     }
 
     if (paymentMethod) {
