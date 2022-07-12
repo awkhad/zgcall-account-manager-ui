@@ -4,9 +4,9 @@ export const getCardImage = (card: string) => {
   const cards = {
     visa: '/visa.png',
     mastercard: '/mastercard.png',
-    amex: '/americanexpress.png',
-    dinersclub: '/diners.jpeg',
-    discover: '/discover.jpeg',
+    amex: '/amex.png',
+    dinersclub: '/dinersclub.jpeg',
+    discover: '/discover.png',
     jcb: '/jcb.png',
     unionpay: '/unionpay.png',
     maestro: '/maestro.png',
@@ -15,7 +15,11 @@ export const getCardImage = (card: string) => {
     hipercard: '/hipercard.png',
     aura: '/aura.png',
     default: '/visa.png',
+    delta: '/delta.png',
+    directdebit: '/directdebit.png',
+    klarna: '/klarna.png',
+    mir: '/mir.png',
   }
 
-  return getPath(cards[card] || card['default'])
+  return getPath(cards[card] || cards.default)
 }

@@ -82,11 +82,11 @@ export function PaymentMethods() {
                 >
                   <div className="flex items-center justify-between">
                     <div className="flex items-center">
-                      <div className="p-4 bg-gray-500 mr-4 rounded">
+                      <div className="bg-gray-500 mr-4 rounded">
                         <img
                           src={getCardImage(method.cardBrand)}
                           alt={method.cardBrand}
-                          className="w-10"
+                          className="w-14"
                         />
                       </div>
                       <div className="method-name">
