@@ -1,5 +1,5 @@
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js'
-import { useCallback, useMemo } from 'react'
+import { useCallback, useMemo, useState } from 'react'
 
 import { useLoggedIn } from '@/mods/auth/hooks/useLoggedIn'
 import { Notifier } from '@/mods/shared/components/Notification'
@@ -15,7 +15,9 @@ export const AddPaymentMethod = () => {
 
   const { isOpen, close } = useAddPaymentMethodPanel()
 
-  const { mutate, isLoading } = useAddPaymentMethod()
+  const { mutate, isLoading: isLoadingPayment } = useAddPaymentMethod()
+
+  const [isLoading, setIsLoading] = useState(false)
 
   const onClose = useCallback(() => {
     close()
@@ -27,6 +29,7 @@ export const AddPaymentMethod = () => {
         { paymentMethodId },
         {
           onSuccess() {
+            setIsLoading(false)
             onClose()
 
             Notifier.success('Your payment method has been added.')
@@ -48,6 +51,8 @@ export const AddPaymentMethod = () => {
   )
 
   const handleSubmit = useCallback(async () => {
+    setIsLoading(true)
+
     if (!stripe || !elements) {
       return ''
     }
@@ -86,7 +91,7 @@ export const AddPaymentMethod = () => {
       description={headings.description}
       saveButtonProps={{
         children: headings.buttonText,
-        loading: isLoading,
+        loading: isLoadingPayment || isLoading,
         disabled: !stripe || !elements,
         onClick: () => handleSubmit(),
       }}
