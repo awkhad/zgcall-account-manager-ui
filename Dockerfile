@@ -2,7 +2,7 @@
 ## Dependencies
 ##
 FROM node:lts-alpine AS deps
-LABEL maintainer="Pedro Sanders <psanders@fonoster.com>"
+LABEL maintainer="Fonoster Team <fonosterteam@fonoster.com>"
 
 WORKDIR /app
 # Check https://github.com/nodejs/docker-node/tree/b4117f9333da4138b03a546ec926ef50a31506c3#nodealpine to understand why libc6-compat might be needed.
@@ -10,8 +10,7 @@ RUN apk add --no-cache libc6-compat g++ cmake make python3 git
 
 # copy the package.json to install dependencies
 # FIXME: Add yarn.locl
-# COPY package.json yarn.lock ./
-COPY package.json ./
+COPY package.json yarn.lock ./
 RUN --mount=type=cache,id=yarn,sharing=locked,target=/usr/local/share/.cache/yarn yarn install --frozen-lockfile
 
 ##

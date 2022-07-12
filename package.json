@@ -2,7 +2,7 @@
   "name": "@fonoster/account-manager-ui",
   "version": "0.3.2",
   "private": true,
-  "author": "Fonoster Team",
+  "author": "Fonoster Inc",
   "bin": {
     "run": "./run.sh"
   },
