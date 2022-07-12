@@ -1,10 +1,12 @@
+import { getPath } from './getPath'
+
 export const getCardImage = (card: string) => {
   const cards = {
     visa: '/visa.png',
     mastercard: '/mastercard.png',
-    amex: '/amex.png',
-    diners: '/diners.png',
-    discover: '/discover.png',
+    amex: '/americanexpress.png',
+    dinersclub: '/diners.jpeg',
+    discover: '/discover.jpeg',
     jcb: '/jcb.png',
     unionpay: '/unionpay.png',
     maestro: '/maestro.png',
@@ -12,8 +14,8 @@ export const getCardImage = (card: string) => {
     hiper: '/hiper.png',
     hipercard: '/hipercard.png',
     aura: '/aura.png',
-    default: '/default.png',
+    default: '/visa.png',
   }
 
-  return cards[card] || card['default']
+  return getPath(cards[card] || card['default'])
 }

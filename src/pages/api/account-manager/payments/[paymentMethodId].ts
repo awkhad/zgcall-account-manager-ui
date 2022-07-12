@@ -15,6 +15,10 @@ export default async function handle(
       manager.removePaymentMethod({
         paymentMethodId: req.query.paymentMethodId as string,
       }),
+    put: async () =>
+      manager.setDefaultPaymentMethod({
+        paymentMethodId: req.query.paymentMethodId as string,
+      }),
   }
 
   return requestHandler({ handlers, req, res })

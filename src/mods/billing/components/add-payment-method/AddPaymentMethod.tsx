@@ -1,6 +1,7 @@
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js'
 import { useCallback, useMemo } from 'react'
 
+import { useLoggedIn } from '@/mods/auth/hooks/useLoggedIn'
 import { Notifier } from '@/mods/shared/components/Notification'
 import { Panel } from '@/ui'
 
@@ -8,6 +9,7 @@ import { useAddPaymentMethod } from '../../hooks/useAddPaymentMethod'
 import { useAddPaymentMethodPanel } from './useAddPaymentMethodPanel'
 
 export const AddPaymentMethod = () => {
+  const { user } = useLoggedIn()
   const stripe = useStripe()
   const elements = useElements()
 
@@ -27,7 +29,7 @@ export const AddPaymentMethod = () => {
           onSuccess() {
             onClose()
 
-            Notifier.success('Your plan has been successfully changed.')
+            Notifier.success('Your payment method has been added.')
           },
         }
       )
@@ -56,7 +58,10 @@ export const AddPaymentMethod = () => {
 
     const { paymentMethod, error } = await stripe.createPaymentMethod({
       type: 'card',
-      // billing_details: billingDetails,
+      billing_details: {
+        name: user.name,
+        email: user.email,
+      },
       card,
     })
 
@@ -65,9 +70,9 @@ export const AddPaymentMethod = () => {
     }
 
     if (paymentMethod) {
-      await onSave(paymentMethod.id)
+      onSave(paymentMethod.id)
     }
-  }, [stripe, elements, onSave])
+  }, [stripe, elements, onSave, user.name, user.email])
 
   if (!stripe || !elements) {
     return null
@@ -87,17 +92,22 @@ export const AddPaymentMethod = () => {
       }}
     >
       <>
-        {/* <label>
-                  Full name
-                  <input
-                    type="text"
-                    id="name"
-                    value={name}
-                    onChange={e => setName(e.target.value)}
-                  />
-                </label> */}
-
-        <CardElement />
+        <CardElement
+          id="fonoster-card"
+          options={{
+            style: {
+              base: {
+                color: 'white',
+                fontFamily: 'inherit',
+                fontSize: '16px',
+                '::placeholder': {
+                  color: '#bbbbbbbd',
+                },
+                padding: '66px',
+              },
+            },
+          }}
+        />
       </>
     </Panel>
   )

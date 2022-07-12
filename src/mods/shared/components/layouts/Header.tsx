@@ -60,9 +60,8 @@ export const Header = () => {
 
       <div className="w-full max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center pt-10">
-          <div className="flex-shrink-0">
-            <span className="sr-only">Open user menu</span>
-            {user?.avatar && (
+          <div className="rounded-full bg-gray-500 flex-shrink-0 h-20 w-20">
+            {user.avatar && (
               <img
                 className="h-20 w-20 rounded-full"
                 src={user?.avatar}
