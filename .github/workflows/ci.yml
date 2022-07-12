@@ -28,7 +28,7 @@ jobs:
         env:
           DOCKER_BUILDKIT: 1
         with:
-          name: fonoster/webui
+          name: fonoster/account-manager-ui
           username: ${{ secrets.DOCKER_HUB_USERNAME }}
           password: ${{ secrets.DOCKER_HUB_PASSWORD }}
           workdir: .
