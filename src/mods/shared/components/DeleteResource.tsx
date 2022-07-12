@@ -9,7 +9,6 @@ interface DeleteResourceProps {
   description?: string
   isLoading?: boolean
   isOpen: boolean
-  refId: string
   onDelete: () => void
   onClose: () => void
 }

@@ -1,19 +1,23 @@
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js'
-import { useCallback, useMemo } from 'react'
+import { useCallback, useMemo, useState } from 'react'
 
+import { useLoggedIn } from '@/mods/auth/hooks/useLoggedIn'
 import { Notifier } from '@/mods/shared/components/Notification'
-import { Panel } from '@/ui'
+import { Panel, Text } from '@/ui'
 
 import { useAddPaymentMethod } from '../../hooks/useAddPaymentMethod'
 import { useAddPaymentMethodPanel } from './useAddPaymentMethodPanel'
 
 export const AddPaymentMethod = () => {
+  const { user } = useLoggedIn()
   const stripe = useStripe()
   const elements = useElements()
 
   const { isOpen, close } = useAddPaymentMethodPanel()
 
-  const { mutate, isLoading } = useAddPaymentMethod()
+  const { mutate, isLoading: isLoadingPayment } = useAddPaymentMethod()
+
+  const [isLoading, setIsLoading] = useState(false)
 
   const onClose = useCallback(() => {
     close()
@@ -25,9 +29,10 @@ export const AddPaymentMethod = () => {
         { paymentMethodId },
         {
           onSuccess() {
+            setIsLoading(false)
             onClose()
 
-            Notifier.success('Your plan has been successfully changed.')
+            Notifier.success('Your payment method has been added.')
           },
         }
       )
@@ -46,6 +51,8 @@ export const AddPaymentMethod = () => {
   )
 
   const handleSubmit = useCallback(async () => {
+    setIsLoading(true)
+
     if (!stripe || !elements) {
       return ''
     }
@@ -56,7 +63,10 @@ export const AddPaymentMethod = () => {
 
     const { paymentMethod, error } = await stripe.createPaymentMethod({
       type: 'card',
-      // billing_details: billingDetails,
+      billing_details: {
+        name: user.name,
+        email: user.email,
+      },
       card,
     })
 
@@ -65,9 +75,9 @@ export const AddPaymentMethod = () => {
     }
 
     if (paymentMethod) {
-      await onSave(paymentMethod.id)
+      onSave(paymentMethod.id)
     }
-  }, [stripe, elements, onSave])
+  }, [stripe, elements, onSave, user.name, user.email])
 
   if (!stripe || !elements) {
     return null
@@ -81,23 +91,31 @@ export const AddPaymentMethod = () => {
       description={headings.description}
       saveButtonProps={{
         children: headings.buttonText,
-        loading: isLoading,
+        loading: isLoadingPayment || isLoading,
         disabled: !stripe || !elements,
         onClick: () => handleSubmit(),
       }}
     >
       <>
-        {/* <label>
-                  Full name
-                  <input
-                    type="text"
-                    id="name"
-                    value={name}
-                    onChange={e => setName(e.target.value)}
-                  />
-                </label> */}
-
-        <CardElement />
+        <CardElement
+          id="fonoster-card"
+          options={{
+            style: {
+              base: {
+                color: 'white',
+                fontFamily: 'inherit',
+                fontSize: '16px',
+                '::placeholder': {
+                  color: '#bbbbbbbd',
+                },
+                padding: '66px',
+              },
+            },
+          }}
+        />
+        <Text className="m-0 p-0 mt-2">
+          It will be used as the default payment method.
+        </Text>
       </>
     </Panel>
   )
