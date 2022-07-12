@@ -77,7 +77,7 @@ export function PaymentMethods() {
                 <div
                   key={method.ref}
                   className={classes(
-                    'cursor-pointer relative rounded-lg bg-gray-700 border border-gray-500 p-6 shadow-sm mb-6'
+                    'relative rounded-lg bg-gray-700 border border-gray-500 p-6 shadow-sm mb-6'
                   )}
                 >
                   <div className="flex items-center justify-between">
