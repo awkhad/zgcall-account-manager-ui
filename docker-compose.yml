@@ -36,7 +36,7 @@ services:
       - AUTH_SECRET
       - JWT_SECRET
       - LOGS_TRANSPORT
-      - APP_URL
+      - LOGS_LEVEL
     networks:
       - fonoster
     volumes:
@@ -57,14 +57,10 @@ services:
     expose:
       - 3000
     environment:
-      - NEXTAUTH_URL
+      - APISERVER_ENDPOINT
       - ALLOW_INSECURE
-      - GITHUB_CLIENT_ID
-      - GITHUB_CLIENT_SECRET
-      - AUTH_SECRET
-      - JWT_SECRET
       - LOGS_TRANSPORT
-      - APP_URL
+      - LOGS_LEVEL
     networks:
       - fonoster
     volumes:
