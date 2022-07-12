@@ -330,7 +330,7 @@
 
 "@fonoster/account-manager@git+https://efraa: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@github.com/fonoster/account-manager.git":
   version "0.1.0"
-  resolved "git+https://efraa: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@github.com/fonoster/account-manager.git#d13e6f7ba89d48c84c0497858264cf31a191e6a6"
+  resolved "git+https://efraa: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@github.com/fonoster/account-manager.git#5152217a9d420d327834b986458187836af82fb5"
   dependencies:
     "@fonoster/auth" "^0.3.12"
     "@fonoster/common" "^0.3.12"
@@ -666,7 +666,7 @@
     google-protobuf "^3.17.0"
     grpc-promise "^1.4.0"
 
-"@grpc/grpc-js@^1.3.7", "@grpc/grpc-js@^1.6.7":
+"@grpc/grpc-js@^1.3.7":
   version "1.6.7"
   resolved "https://registry.yarnpkg.com/@grpc/grpc-js/-/grpc-js-1.6.7.tgz#4c4fa998ff719fe859ac19fe977fdef097bb99aa"
   integrity sha512-eBM03pu9hd3VqDQG+kHahiG1x80RGkkqqRb1Pchcwqej/KkAH95gAvKs6laqaHCycYaPK+TKuNQnOz9UXYA8qw==
