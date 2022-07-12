@@ -21,7 +21,7 @@
     ]
   },
   "dependencies": {
-    "@fonoster/account-manager": "git+https://efraa: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@github.com/fonoster/account-manager.git",
+    "@fonoster/account-manager": "https://github.com/fonoster/account-manager",
     "@fonoster/logger": "^0.3.11",
     "@fonoster/monitor": "^0.3.11",
     "@fonoster/opentelemetry-user-interaction": "github:fonoster/opentelemetry-user-interaction",

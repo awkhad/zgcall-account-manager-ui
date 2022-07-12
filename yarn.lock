@@ -328,9 +328,9 @@
     minimatch "^3.1.2"
     strip-json-comments "^3.1.1"
 
-"@fonoster/account-manager@git+https://efraa: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@github.com/fonoster/account-manager.git":
+"@fonoster/account-manager@https://github.com/fonoster/account-manager":
   version "0.1.0"
-  resolved "git+https://efraa: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@github.com/fonoster/account-manager.git#5152217a9d420d327834b986458187836af82fb5"
+  resolved "https://github.com/fonoster/account-manager#9b10078e69aea1fab66871d1d4d9db20bf9276ae"
   dependencies:
     "@fonoster/auth" "^0.3.12"
     "@fonoster/common" "^0.3.12"
