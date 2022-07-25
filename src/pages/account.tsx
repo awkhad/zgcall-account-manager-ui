@@ -31,7 +31,7 @@ export function Account() {
             <Text>
               {isStarter()
                 ? 'You are currently on the Starter plan. Configure your billing account for more projects and additional benefits.'
-                : 'You are currently on the Business plan, you can refer to our documentation to see the limits and additions to your subscription.'}
+                : 'You are currently on the Pro plan. Please refer to the documentation for limits and additions to your subscription.'}
             </Text>
 
             <div className="plan relative rounded-lg border border-gray-500 bg-gray-700 p-6 shadow-sm">

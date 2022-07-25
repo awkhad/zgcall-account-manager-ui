@@ -50,7 +50,7 @@ export const Header = () => {
                 <a className="flex items-center text-gray-300 hover:text-primary">
                   <HomeIcon className="w-6 h-6 mr-2" />
 
-                  <span>Go to console</span>
+                  <span>Go back</span>
                 </a>
               </Link>
             </div>
