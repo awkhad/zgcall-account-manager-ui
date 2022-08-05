@@ -1,8 +1,6 @@
 name: CI
 
 on:
-  push:
-    branches: [ main ]
 
   workflow_dispatch:
     inputs:
@@ -35,7 +33,7 @@ jobs:
           password: ${{ secrets.DOCKER_HUB_PASSWORD }}
           workdir: .
           tags: "latest, ${{ steps.get_version.outputs.VERSION }}"
-          buildargs: DOCKER_BUILDKIT
+          buildargs: DOCKER_BUILDKIT,APP_URL,APP_BASE_PATH
 
   deploy:
     runs-on: ubuntu-latest
