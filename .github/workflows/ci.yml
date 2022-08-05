@@ -27,6 +27,8 @@ jobs:
         uses: elgohr/Publish-Docker-Github-Action@master
         env:
           DOCKER_BUILDKIT: 1
+          APP_URL: ${{ github.event.inputs.choice }}
+          APP_BASE_PATH: /billing
         with:
           name: fonoster/account-manager-ui
           username: ${{ secrets.DOCKER_HUB_USERNAME }}
