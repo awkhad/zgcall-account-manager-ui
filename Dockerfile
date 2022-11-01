@@ -1,7 +1,7 @@
 ##
 ## Dependencies
 ##
-FROM node:lts-alpine AS deps
+FROM node:16-alpine AS deps
 LABEL maintainer="Fonoster Team <fonosterteam@fonoster.com>"
 
 WORKDIR /app
@@ -16,7 +16,7 @@ RUN --mount=type=cache,id=yarn,sharing=locked,target=/usr/local/share/.cache/yar
 ##
 ## Build
 ##
-FROM node:lts-alpine as builder
+FROM node:16-alpine as builder
 WORKDIR /app
 
 # get the node environment to use at build time
@@ -38,7 +38,7 @@ RUN yarn build
 ## Runner
 ##
 # Production image, copy all the files and run next
-FROM node:lts-alpine AS runner
+FROM node:16-alpine AS runner
 WORKDIR /app
 
 ARG APP_ENV=production
