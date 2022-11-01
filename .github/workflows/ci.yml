@@ -25,7 +25,6 @@ jobs:
         uses: elgohr/Publish-Docker-Github-Action@master
         env:
           DOCKER_BUILDKIT: 1
-          APP_URL: "https://${{ github.event.inputs.choice }}"
           APP_BASE_PATH: "/billing"
         with:
           name: fonoster/account-manager-ui
@@ -33,7 +32,7 @@ jobs:
           password: ${{ secrets.DOCKER_HUB_PASSWORD }}
           workdir: .
           tags: "latest, ${{ steps.get_version.outputs.VERSION }}"
-          buildargs: DOCKER_BUILDKIT,APP_URL,APP_BASE_PATH
+          buildargs: DOCKER_BUILDKIT,APP_BASE_PATH
 
   deploy:
     runs-on: ubuntu-latest

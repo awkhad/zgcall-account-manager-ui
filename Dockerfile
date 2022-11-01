@@ -20,10 +20,8 @@ FROM node:lts-alpine as builder
 WORKDIR /app
 
 # get the node environment to use at build time
-ARG APP_URL
 ARG APP_BASE_PATH=/billing
 ARG NODE_ENV=production
-ENV APP_URL ${APP_URL}
 ENV APP_BASE_PATH ${APP_BASE_PATH}
 ENV NODE_ENV ${NODE_ENV}
 
