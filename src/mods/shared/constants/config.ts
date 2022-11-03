@@ -9,4 +9,12 @@ type Config = {
   }
 }
 
-export const { publicRuntimeConfig: config } = getConfig() as Config
+export const { publicRuntimeConfig } = getConfig() as Config
+
+export const config =
+  typeof window !== 'undefined'
+    ? {
+        ...publicRuntimeConfig,
+        APP_URL: publicRuntimeConfig.APP_URL || window.location.origin,
+      }
+    : publicRuntimeConfig
