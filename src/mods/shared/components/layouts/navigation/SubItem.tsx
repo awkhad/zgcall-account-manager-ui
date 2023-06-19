@@ -18,7 +18,7 @@ export const SubItem: React.FC<Props> = React.forwardRef<
       {...rest}
       className={classes(
         'group w-full py-4 rounded-md flex flex-col font-medium hover:text-white',
-        isActive ? 'text-white' : 'text-gray-300'
+        isActive ? 'text-white' : 'text-gray-200'
       )}
     >
       {children}

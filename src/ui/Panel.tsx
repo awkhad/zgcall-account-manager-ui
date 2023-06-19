@@ -135,7 +135,7 @@ export const Panel: React.FC<Props> = ({
                         <div className="ml-4 h-7 flex items-center absolute right-8 top-8">
                           <button
                             type="button"
-                            className="bg-gray-700 rounded-md text-gray-300 focus:outline-none"
+                            className="bg-gray-700 rounded-md text-gray-200 focus:outline-none"
                             onClick={close}
                             data-intent={title}
                           >

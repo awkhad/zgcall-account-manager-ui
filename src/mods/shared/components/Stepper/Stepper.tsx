@@ -48,7 +48,7 @@ export const Step = (step: IStepProps) => {
               <step.icon
                 className={classes(
                   'h-4 w-4',
-                  step.isActive ? 'text-white' : 'text-gray-400'
+                  step.isActive ? 'text-white' : 'text-gray-300'
                 )}
               />
             </span>

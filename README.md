@@ -2,14 +2,6 @@
 
 Web UI to create powerful voice applications with Fonoster's API
 
-### Technical details
-
-| Environment       | Deployed version | Link                                                   |
-|-------------------|------------------|--------------------------------------------------------|
-| Development       | v0.2.15          | [Go to](http://localhost:3000/)                        |
-| Staging           | v0.2.15          | N/A                                                    |
-| Production        | v0.0.0           | N/A                                                    |
-
 ### Getting Started
 
 > These instructions will get you a copy of the project up and
@@ -57,5 +49,5 @@ For bugs, questions, and discussions, please use the [Github Issues](https://git
 
 #### License
 
-Copyright (C) 2022 by [Fonoster Inc](https://fonoster.com). MIT License (see [LICENSE](/LICENSE) for details).
+Copyright (C) 2023 by [Fonoster Inc](https://fonoster.com). MIT License (see [LICENSE](/LICENSE) for details).
 

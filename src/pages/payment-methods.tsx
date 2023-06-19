@@ -126,7 +126,7 @@ export function PaymentMethods() {
                                 <button
                                   className={classes(
                                     active ? 'bg-gray-600' : '',
-                                    'w-full block px-4 py-2 text-sm text-gray-300 text-left'
+                                    'w-full block px-4 py-2 text-sm text-gray-200 text-left'
                                   )}
                                   onClick={() => onSetDefaultMethod(method.ref)}
                                 >
@@ -139,7 +139,7 @@ export function PaymentMethods() {
                                 <button
                                   className={classes(
                                     active ? 'bg-gray-600' : '',
-                                    'w-full block px-4 py-2 text-sm text-gray-300 text-left'
+                                    'w-full block px-4 py-2 text-sm text-gray-200 text-left'
                                   )}
                                   onClick={() => onOpen(method.ref)}
                                 >

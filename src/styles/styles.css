@@ -148,7 +148,7 @@ p {
   font-weight: 400;
 }
 .sbui-tabs--alt div[role='tablist'] .sbui-btn-text {
-  @apply dark:text-gray-400;
+  @apply dark:text-gray-300;
   font-weight: 400;
   shadow: none;
 }
@@ -267,11 +267,11 @@ table .thead--plans th {
 
 .Toastify__toast {
   font-size: 14px;
-  @apply text-gray-300 bg-gray-700 !important;
+  @apply text-gray-200 bg-gray-700 !important;
 }
 
 .Toastify__close-button {
-  @apply text-gray-300 !important;
+  @apply text-gray-200 !important;
 }
 
 .Toastify__toast-body > div:nth-child(2) {
@@ -300,7 +300,7 @@ table .thead--plans th {
 }
 
 .sbui-input-container input::placeholder {
-  @apply text-gray-400;
+  @apply text-gray-300;
   opacity: 0.7; /* Firefox */
 }
 

@@ -47,7 +47,7 @@ export const Header = () => {
             </div>
             <div className="flex-shrink-0 flex items-center">
               <Link href={config.APP_URL}>
-                <a className="flex items-center text-gray-300 hover:text-primary">
+                <a className="flex items-center text-gray-200 hover:text-primary">
                   <HomeIcon className="w-6 h-6 mr-2" />
 
                   <span>Go back</span>
@@ -84,7 +84,7 @@ export const Header = () => {
                       className={classes(
                         pathname === item.href
                           ? 'border-primary text-white inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium'
-                          : 'border-transparent text-gray-400 hover:border-gray-500 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium'
+                          : 'border-transparent text-gray-300 hover:border-gray-500 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium'
                       )}
                     >
                       {item.label}
