@@ -235,7 +235,7 @@ table .thead--plans th {
 .pf-spinner-content {
   width: 80px;
   height: 80px;
-  border: 2.5px solid #333741;
+  border: 2.5px solid #1b1b1b;
   border-top-color: #4ab96d;
   border-radius: 50%;
   animation: spinner 1s ease-in-out infinite alternate;
@@ -253,7 +253,7 @@ table .thead--plans th {
   height: 100%;
   z-index: 1;
   animation: fade 0.3s ease-in-out;
-  background-color: #272930;
+  background-color: #101010;
 }
 
 .container {

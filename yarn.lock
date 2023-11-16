@@ -393,6 +393,21 @@
     google-protobuf "^3.17.0"
     grpc-promise "^1.4.0"
 
+"@fonoster/agents@^0.3.27":
+  version "0.3.27"
+  resolved "https://registry.yarnpkg.com/@fonoster/agents/-/agents-0.3.27.tgz#d6a5b63373bf5e904b01e872c0009f2f586f0c0e"
+  integrity sha512-ntKjQbCXvpGoUCM8SQ9FtgSJqfVbJhyZQ9HopoOXkgnnToq/t7LMimoIr3JN/EzRSNV2SwOXfuXCHHiqEuat/Q==
+  dependencies:
+    "@fonoster/auth" "^0.3.27"
+    "@fonoster/certs" "^0.3.27"
+    "@fonoster/common" "^0.3.27"
+    "@fonoster/core" "^0.3.27"
+    "@fonoster/logger" "^0.3.27"
+    "@grpc/grpc-js" "^1.3.7"
+    "@opentelemetry/api" "^1.0.4"
+    google-protobuf "^3.17.0"
+    grpc-promise "^1.4.0"
+
 "@fonoster/apps@^0.3.23":
   version "0.3.23"
   resolved "https://registry.yarnpkg.com/@fonoster/apps/-/apps-0.3.23.tgz#b44f893e43f15fce682e00c670b994361714e41f"
@@ -408,6 +423,21 @@
     "@opentelemetry/api" "^1.0.4"
     grpc-promise "^1.4.0"
 
+"@fonoster/apps@^0.3.27":
+  version "0.3.27"
+  resolved "https://registry.yarnpkg.com/@fonoster/apps/-/apps-0.3.27.tgz#7bd5d5bb2dc0a34a07dd555a184844955d3f987f"
+  integrity sha512-RQUA2Q7geu/Cv82t7l1OAjkccIDwOHEH1GLoea/U09cScmMO7B0tT9cQk3RW36PzKcz2RWWZqJndLRF7jt7HmQ==
+  dependencies:
+    "@fonoster/auth" "^0.3.27"
+    "@fonoster/certs" "^0.3.27"
+    "@fonoster/common" "^0.3.27"
+    "@fonoster/core" "^0.3.27"
+    "@fonoster/errors" "^0.3.27"
+    "@fonoster/logger" "^0.3.27"
+    "@grpc/grpc-js" "^1.3.7"
+    "@opentelemetry/api" "^1.0.4"
+    grpc-promise "^1.4.0"
+
 "@fonoster/auth@^0.3.12", "@fonoster/auth@^0.3.23":
   version "0.3.23"
   resolved "https://registry.yarnpkg.com/@fonoster/auth/-/auth-0.3.23.tgz#20a27a817a2e99b00cfd735b1cac84d7e2f1a11f"
@@ -417,6 +447,22 @@
     "@fonoster/common" "^0.3.23"
     "@fonoster/errors" "^0.3.23"
     "@fonoster/logger" "^0.3.23"
+    "@grpc/grpc-js" "^1.3.7"
+    "@opentelemetry/api" "^1.0.4"
+    express "^4.17.1"
+    google-protobuf "^3.17.0"
+    grpc-promise "^1.4.0"
+    jsonwebtoken "^8.5.1"
+
+"@fonoster/auth@^0.3.27":
+  version "0.3.27"
+  resolved "https://registry.yarnpkg.com/@fonoster/auth/-/auth-0.3.27.tgz#dd9cefe7588b9cb41f2b9a9db92e38cec90f77f0"
+  integrity sha512-NPbYRgKDUwLt99tMdXxEHI2KiOxpSy3ULY1TTAaWjrnGMwElr4HTgqQxguYrreqHYwS5Q5bXEYpCVT3UbR7sIA==
+  dependencies:
+    "@fonoster/certs" "^0.3.27"
+    "@fonoster/common" "^0.3.27"
+    "@fonoster/errors" "^0.3.27"
+    "@fonoster/logger" "^0.3.27"
     "@grpc/grpc-js" "^1.3.7"
     "@opentelemetry/api" "^1.0.4"
     express "^4.17.1"
@@ -443,10 +489,39 @@
     nanoid "^3.1.23"
     phone "^2.4.21"
 
+"@fonoster/callmanager@^0.3.27":
+  version "0.3.27"
+  resolved "https://registry.yarnpkg.com/@fonoster/callmanager/-/callmanager-0.3.27.tgz#82507629577b5672f5fb2984868d689df7d6227f"
+  integrity sha512-GTmIkft9y9YA7l9KIIGyIUDxT3tsEy+KbGn88yvYzbqXaOmE985UgVNibcKKBvh5Swfp92eg1YTmQvW11N7usg==
+  dependencies:
+    "@fonoster/auth" "^0.3.27"
+    "@fonoster/certs" "^0.3.27"
+    "@fonoster/common" "^0.3.27"
+    "@fonoster/core" "^0.3.27"
+    "@fonoster/errors" "^0.3.27"
+    "@fonoster/logger" "^0.3.27"
+    "@grpc/grpc-js" "^1.3.7"
+    "@opentelemetry/api" "^1.0.4"
+    ari-client "^2.2.0"
+    google-protobuf "^3.17.0"
+    grpc-promise "^1.4.0"
+    nanoid "^3.1.23"
+    phone "^3.1.37"
+
 "@fonoster/certs@^0.3.23":
   version "0.3.23"
   resolved "https://registry.yarnpkg.com/@fonoster/certs/-/certs-0.3.23.tgz#0a4b1c84f5d79dca2d859bbac6144e02fba95b46"
   integrity sha512-kUAMaAPIq4dsG0EOxx8u7qWTrn8yE/14C/OIrfNXIAGPj04UmFJf3rebUlJycUY0QZVW4pRQB5pk4wEj5Vvy+Q==
+  dependencies:
+    "@types/jsonwebtoken" "^8.5.0"
+    acme-client "^4.1.3"
+    btoa "^1.2.1"
+    jsonwebtoken "^8.5.1"
+
+"@fonoster/certs@^0.3.27":
+  version "0.3.27"
+  resolved "https://registry.yarnpkg.com/@fonoster/certs/-/certs-0.3.27.tgz#34203e58d7d4f137a240146c2dc5f1684232ea2c"
+  integrity sha512-t1br5NXz2zwG1Q8rfF0puhBh1Ji99CVQj0CW1Udq+ih80xOOqdSG0ypPOAaBmzjSm8GgkDZRxq9G9oHXF756gQ==
   dependencies:
     "@types/jsonwebtoken" "^8.5.0"
     acme-client "^4.1.3"
@@ -479,6 +554,32 @@
     deepmerge "^4.2.2"
     grpc-interceptors "github:fonoster/node-grpc-interceptors"
 
+"@fonoster/common@^0.3.27":
+  version "0.3.27"
+  resolved "https://registry.yarnpkg.com/@fonoster/common/-/common-0.3.27.tgz#4c2264962332b0da06292ad499d94f886f05e5c3"
+  integrity sha512-GtYKjGI2M3tyKEQs8NuyF1iBiQBDIZNCWolNj0hJhn9SeF645jv3n2WdzIzxZKqfX9vtZxfc+kdzkCSjTrQl1A==
+  dependencies:
+    "@fonoster/certs" "^0.3.27"
+    "@fonoster/grpc-health-check" "^3.1.1"
+    "@fonoster/grpc-interceptors" "^0.2.5"
+    "@fonoster/logger" "^0.3.27"
+    "@grpc/grpc-js" "^1.3.7"
+    "@grpc/proto-loader" "^0.7.2"
+    "@opentelemetry/api" "^1.0.4"
+    "@opentelemetry/exporter-jaeger" "^1.0.1"
+    "@opentelemetry/exporter-zipkin" "^1.0.1"
+    "@opentelemetry/instrumentation" "^0.27.0"
+    "@opentelemetry/instrumentation-express" "^0.27.0"
+    "@opentelemetry/instrumentation-grpc" "^0.27.0"
+    "@opentelemetry/instrumentation-http" "^0.27.0"
+    "@opentelemetry/resources" "^1.0.4"
+    "@opentelemetry/sdk-metrics-base" "0.27.0"
+    "@opentelemetry/sdk-trace-base" "^1.0.4"
+    "@opentelemetry/sdk-trace-node" "^1.0.4"
+    "@opentelemetry/semantic-conventions" "^1.0.4"
+    atob "^2.1.2"
+    deepmerge "^4.2.2"
+
 "@fonoster/core@^0.3.12", "@fonoster/core@^0.3.23":
   version "0.3.23"
   resolved "https://registry.yarnpkg.com/@fonoster/core/-/core-0.3.23.tgz#3ddc077965de7c83ed2d1e7430d7425651eb2134"
@@ -498,6 +599,25 @@
     nanoid "^3.1.23"
     phone "^2.4.21"
 
+"@fonoster/core@^0.3.27":
+  version "0.3.27"
+  resolved "https://registry.yarnpkg.com/@fonoster/core/-/core-0.3.27.tgz#0b07290c3c225e851950ddb8f2edfcd550222707"
+  integrity sha512-+91c3AcKmTqSsZ5ihciKB4nJb3bcjPoOqEk4bxs3Z9YSTy76Whs79Vri8Y70VdYZWUxcEqHPi88v6A7bVt/4cg==
+  dependencies:
+    "@fonoster/auth" "^0.3.27"
+    "@fonoster/certs" "^0.3.27"
+    "@fonoster/common" "^0.3.27"
+    "@fonoster/errors" "^0.3.27"
+    "@fonoster/logger" "^0.3.27"
+    "@grpc/grpc-js" "^1.3.7"
+    "@opentelemetry/api" "^1.0.4"
+    atob "^2.1.2"
+    btoa "^1.2.1"
+    deepmerge "^4.2.2"
+    ioredis "^4.16.0"
+    nanoid "^3.1.23"
+    phone "^3.1.37"
+
 "@fonoster/domains@^0.3.23":
   version "0.3.23"
   resolved "https://registry.yarnpkg.com/@fonoster/domains/-/domains-0.3.23.tgz#a77465b383e1c275b26a4669f5373c59a8fbeb23"
@@ -513,10 +633,30 @@
     grpc-promise "^1.4.0"
     is-valid-domain "^0.1.2"
 
+"@fonoster/domains@^0.3.27":
+  version "0.3.27"
+  resolved "https://registry.yarnpkg.com/@fonoster/domains/-/domains-0.3.27.tgz#4325ebbef2fc718a14f211a4b2d7498f87a0b4c5"
+  integrity sha512-nkXNeFiIhHwwZmjfguwGUYvBO/sSWQpZu/g4ZeXPltQ1unZGgL5qPksHedbvnmkPnMqwma1d9NIQqwU3jRNVmA==
+  dependencies:
+    "@fonoster/auth" "^0.3.27"
+    "@fonoster/certs" "^0.3.27"
+    "@fonoster/common" "^0.3.27"
+    "@fonoster/core" "^0.3.27"
+    "@grpc/grpc-js" "^1.3.7"
+    "@opentelemetry/api" "^1.0.4"
+    google-protobuf "^3.17.0"
+    grpc-promise "^1.4.0"
+    is-valid-domain "^0.1.2"
+
 "@fonoster/errors@^0.3.23":
   version "0.3.23"
   resolved "https://registry.yarnpkg.com/@fonoster/errors/-/errors-0.3.23.tgz#a8547b9712b4928c0dd24a8e401b96386763015e"
   integrity sha512-dRL5ujI6Ra12dhmwU7MJQuSPhYnbNj8kU2n+iCAybBdMUuasuEPe8/VaSrlRld+XQUhJw6ZocFjPKWIIgYThDw==
+
+"@fonoster/errors@^0.3.27":
+  version "0.3.27"
+  resolved "https://registry.yarnpkg.com/@fonoster/errors/-/errors-0.3.27.tgz#cb6fef925305a4708ca3652a2f0f6d3689baf523"
+  integrity sha512-iUjuKlNouYJhl6qfze+L2ZeUJWSEjxomcje1jeWRO6XdUVf7CKVu+szbNmBdHMx1JxkgVlUruIXZ+QecGAwnyg==
 
 "@fonoster/funcs@^0.3.23":
   version "0.3.23"
@@ -545,6 +685,33 @@
     tar "^6.1.0"
     walk "^2.3.14"
 
+"@fonoster/funcs@^0.3.27":
+  version "0.3.27"
+  resolved "https://registry.yarnpkg.com/@fonoster/funcs/-/funcs-0.3.27.tgz#16e463f2e8cddf6014cec06067490ff7389f300f"
+  integrity sha512-78ASSKoiP8I1CZGeW7nu9xO1qULiQEfmqnE06J98T+mHQk5TL3N7QiSUfv5APAXgau8UrNGMxcvBPm1pqhHpFQ==
+  dependencies:
+    "@fonoster/auth" "^0.3.27"
+    "@fonoster/certs" "^0.3.27"
+    "@fonoster/common" "^0.3.27"
+    "@fonoster/core" "^0.3.27"
+    "@fonoster/errors" "^0.3.27"
+    "@fonoster/logger" "^0.3.27"
+    "@fonoster/storage" "^0.3.27"
+    "@grpc/grpc-js" "^1.3.7"
+    "@opentelemetry/api" "^1.0.4"
+    btoa "^1.2.1"
+    container-image-builder "^3.2.0"
+    cron-validate "^1.4.3"
+    cross-spawn "^7.0.3"
+    dockerode "^3.3.0"
+    fs-extra "^8.1.0"
+    google-protobuf "^3.17.0"
+    grpc-promise "^1.4.0"
+    ndjson "^2.0.0"
+    openfaas-client "^0.0.2"
+    tar "^6.1.0"
+    walk "^2.3.14"
+
 "@fonoster/grpc-health-check@^3.1.1":
   version "3.1.2"
   resolved "https://registry.yarnpkg.com/@fonoster/grpc-health-check/-/grpc-health-check-3.1.2.tgz#4db0de6bc1936508b4f6a466f85a27580160053f"
@@ -553,7 +720,15 @@
     google-protobuf "^3.21.0"
     grpc-boom "^3.0.11"
 
-"@fonoster/logger@^0.3.11", "@fonoster/logger@^0.3.12", "@fonoster/logger@^0.3.23":
+"@fonoster/grpc-interceptors@^0.2.5":
+  version "0.2.5"
+  resolved "https://registry.yarnpkg.com/@fonoster/grpc-interceptors/-/grpc-interceptors-0.2.5.tgz#0802875c24d0c25226c1539f0812bf56958b50d4"
+  integrity sha512-xYVJoTdo7Vami57n6iKJrRfjHjHSNfNK1+XwboExTGNRn0BCTsRm+14ZaL7k8IR1lHofV3AlRnhYIoGF6PBDFA==
+  dependencies:
+    zipkin "^0.12.0"
+    zipkin-transport-http "^0.22.0"
+
+"@fonoster/logger@^0.3.12", "@fonoster/logger@^0.3.23":
   version "0.3.23"
   resolved "https://registry.yarnpkg.com/@fonoster/logger/-/logger-0.3.23.tgz#0f53c3f6ed42c10035eca6102997ad8717acb90f"
   integrity sha512-gj/9C0yJmwATQ6//8RDdquRfJ7GDlT5bNfguYTKbKlCDzHaWK2L53nptqn31zUFCOT6+uSgZ4IBaiB1q15M8lg==
@@ -561,7 +736,15 @@
     fluent-logger "^3.4.1"
     winston "^3.6.0"
 
-"@fonoster/monitor@^0.3.11", "@fonoster/monitor@^0.3.23":
+"@fonoster/logger@^0.3.27":
+  version "0.3.27"
+  resolved "https://registry.yarnpkg.com/@fonoster/logger/-/logger-0.3.27.tgz#348267c1d66265c9c96131296ccdb8b38ebd4e9d"
+  integrity sha512-AhY2bKqfpS2IA0MORSstjH1yk+CnkXp9jB+J9tBug4VZv2cCf6FAoe+iajTmOPupf661IiKFjdEEa/4m7g4N7w==
+  dependencies:
+    fluent-logger "^3.4.1"
+    winston "^3.6.0"
+
+"@fonoster/monitor@^0.3.23":
   version "0.3.23"
   resolved "https://registry.yarnpkg.com/@fonoster/monitor/-/monitor-0.3.23.tgz#823b94497bc87eb1ea7ebd8160c617f43b21d0dc"
   integrity sha512-Hr1/G/84fxpUKOJi2taiaHowklhMhS4hoAREIjb4/anW3C4KU2ZD2tGx4fH+B4Pm/9HG4MsWikrnIdQRHTU7IQ==
@@ -573,6 +756,23 @@
     "@fonoster/core" "^0.3.23"
     "@fonoster/errors" "^0.3.23"
     "@fonoster/logger" "^0.3.23"
+    "@grpc/grpc-js" "^1.3.7"
+    "@opentelemetry/api" "^1.0.4"
+    google-protobuf "^3.17.0"
+    grpc-promise "^1.4.0"
+
+"@fonoster/monitor@^0.3.27":
+  version "0.3.27"
+  resolved "https://registry.yarnpkg.com/@fonoster/monitor/-/monitor-0.3.27.tgz#ee8b9b305fe532dad72deead04b4a9bd2f8f95c6"
+  integrity sha512-fmlDgTEUEGT528X/87fxVb8NrbtGOS05FnZtAplcbqTWt3IO+QM6hhFrsPta3ajYB8HEma+vPSLnf9HKOGoMYg==
+  dependencies:
+    "@elastic/elasticsearch" "^7.17.0"
+    "@fonoster/auth" "^0.3.27"
+    "@fonoster/certs" "^0.3.27"
+    "@fonoster/common" "^0.3.27"
+    "@fonoster/core" "^0.3.27"
+    "@fonoster/errors" "^0.3.27"
+    "@fonoster/logger" "^0.3.27"
     "@grpc/grpc-js" "^1.3.7"
     "@opentelemetry/api" "^1.0.4"
     google-protobuf "^3.17.0"
@@ -595,6 +795,24 @@
     google-protobuf "^3.17.0"
     grpc-promise "^1.4.0"
     phone "^3.1.31"
+
+"@fonoster/numbers@^0.3.27":
+  version "0.3.27"
+  resolved "https://registry.yarnpkg.com/@fonoster/numbers/-/numbers-0.3.27.tgz#9e4d155c187878ee3ab4329fb7804710a0618663"
+  integrity sha512-Tf8Xlaj4XBdzJKdLhdxyNWmSBmz6TCHg2q6Ahb3dgY7YRmMkIHhZsL9vag5s+2iQ4TDyrfmvTKt4oJebZA4R3A==
+  dependencies:
+    "@fonoster/apps" "^0.3.27"
+    "@fonoster/auth" "^0.3.27"
+    "@fonoster/certs" "^0.3.27"
+    "@fonoster/common" "^0.3.27"
+    "@fonoster/core" "^0.3.27"
+    "@fonoster/errors" "^0.3.27"
+    "@fonoster/logger" "^0.3.27"
+    "@grpc/grpc-js" "^1.3.7"
+    "@opentelemetry/api" "^1.0.4"
+    google-protobuf "^3.17.0"
+    grpc-promise "^1.4.0"
+    phone "^3.1.37"
 
 "@fonoster/opentelemetry-user-interaction@https://github.com/fonoster/opentelemetry-user-interaction":
   version "0.28.1"
@@ -621,6 +839,23 @@
     google-protobuf "^3.17.0"
     grpc-promise "^1.4.0"
 
+"@fonoster/projects@^0.3.27":
+  version "0.3.27"
+  resolved "https://registry.yarnpkg.com/@fonoster/projects/-/projects-0.3.27.tgz#e5a533f56ff6ed0aa0eac62d223f8e021631a209"
+  integrity sha512-psLtLRma1WQIKPor6zJ0j6c7q6YK3d4D68nQzdXg6S80BctN6DrgMKUzyER0FdwKTf0QJ7INaFwRQpF1B7Ko0A==
+  dependencies:
+    "@fonoster/auth" "^0.3.27"
+    "@fonoster/certs" "^0.3.27"
+    "@fonoster/common" "^0.3.27"
+    "@fonoster/core" "^0.3.27"
+    "@fonoster/errors" "^0.3.27"
+    "@fonoster/logger" "^0.3.27"
+    "@grpc/grpc-js" "^1.3.7"
+    "@opentelemetry/api" "^1.0.4"
+    bson-objectid "^2.0.2"
+    google-protobuf "^3.17.0"
+    grpc-promise "^1.4.0"
+
 "@fonoster/providers@^0.3.23":
   version "0.3.23"
   resolved "https://registry.yarnpkg.com/@fonoster/providers/-/providers-0.3.23.tgz#5932a37237f47d1248f90e18e31c1fc1b08be898"
@@ -637,7 +872,23 @@
     grpc-promise "^1.4.0"
     is-valid-host "^1.0.1"
 
-"@fonoster/sdk@^0.3.11", "@fonoster/sdk@^0.3.12":
+"@fonoster/providers@^0.3.27":
+  version "0.3.27"
+  resolved "https://registry.yarnpkg.com/@fonoster/providers/-/providers-0.3.27.tgz#6c03674c398d17b3914d517b41d7fe9922addb71"
+  integrity sha512-HkAA5cX/+lvivwldALcNAdWfVOLgDhfsjyiwJexXc7X3PyzutUr0swA2IE90+DwGxUXsEpqoOd68OUooa5I33g==
+  dependencies:
+    "@fonoster/auth" "^0.3.27"
+    "@fonoster/certs" "^0.3.27"
+    "@fonoster/common" "^0.3.27"
+    "@fonoster/core" "^0.3.27"
+    "@fonoster/errors" "^0.3.27"
+    "@grpc/grpc-js" "^1.3.7"
+    "@opentelemetry/api" "^1.0.4"
+    google-protobuf "^3.17.0"
+    grpc-promise "^1.4.0"
+    is-valid-host "^1.0.1"
+
+"@fonoster/sdk@^0.3.12":
   version "0.3.23"
   resolved "https://registry.yarnpkg.com/@fonoster/sdk/-/sdk-0.3.23.tgz#ce0f6efcb31187f4f3925ea3e3295f7eea5cc88b"
   integrity sha512-vP9O447YJJYFlB8HzQ5QMc7pevjhGErom/z5+fcyNRMEfSaKKJT5wyjHEUMo/i1vSMSIp0h/k/TCYraVFU0n3Q==
@@ -657,6 +908,26 @@
     "@fonoster/storage" "^0.3.23"
     "@fonoster/users" "^0.3.23"
 
+"@fonoster/sdk@^0.3.27":
+  version "0.3.27"
+  resolved "https://registry.yarnpkg.com/@fonoster/sdk/-/sdk-0.3.27.tgz#5619da07736b5f5e42931967406b4967f8b10d54"
+  integrity sha512-RMFURv7XnWDdu6h6ZW+fKPH3Okk8LhJjb1LZINBM6yo4E8INxf15mV/Mpctbp+UWtQ3ehEC8qlxCvBURqB8l9g==
+  dependencies:
+    "@fonoster/agents" "^0.3.27"
+    "@fonoster/apps" "^0.3.27"
+    "@fonoster/auth" "^0.3.27"
+    "@fonoster/callmanager" "^0.3.27"
+    "@fonoster/domains" "^0.3.27"
+    "@fonoster/funcs" "^0.3.27"
+    "@fonoster/logger" "^0.3.27"
+    "@fonoster/monitor" "^0.3.27"
+    "@fonoster/numbers" "^0.3.27"
+    "@fonoster/projects" "^0.3.27"
+    "@fonoster/providers" "^0.3.27"
+    "@fonoster/secrets" "^0.3.27"
+    "@fonoster/storage" "^0.3.27"
+    "@fonoster/users" "^0.3.27"
+
 "@fonoster/secrets@^0.3.23":
   version "0.3.23"
   resolved "https://registry.yarnpkg.com/@fonoster/secrets/-/secrets-0.3.23.tgz#556f4de0c9fec80da34ff6cdb58b08404aecdb49"
@@ -667,6 +938,21 @@
     "@fonoster/common" "^0.3.23"
     "@fonoster/core" "^0.3.23"
     "@fonoster/logger" "^0.3.23"
+    "@grpc/grpc-js" "^1.3.7"
+    "@opentelemetry/api" "^1.0.4"
+    grpc-promise "^1.4.0"
+    node-vault "^0.9.21"
+
+"@fonoster/secrets@^0.3.27":
+  version "0.3.27"
+  resolved "https://registry.yarnpkg.com/@fonoster/secrets/-/secrets-0.3.27.tgz#38691a7b4e22ec4b08cf832b0f461af4c5314e36"
+  integrity sha512-MAE6E6Ta1xzf8IUC3sBaxcwHoJ6oVG3UgRBoVHnUK1Y/dVpoG/yTCf7I7AObVO40nbedxIqDaDBYzI9bEA2cJw==
+  dependencies:
+    "@fonoster/auth" "^0.3.27"
+    "@fonoster/certs" "^0.3.27"
+    "@fonoster/common" "^0.3.27"
+    "@fonoster/core" "^0.3.27"
+    "@fonoster/logger" "^0.3.27"
     "@grpc/grpc-js" "^1.3.7"
     "@opentelemetry/api" "^1.0.4"
     grpc-promise "^1.4.0"
@@ -693,6 +979,27 @@
     tar "^6.1.0"
     walk "^2.3.14"
 
+"@fonoster/storage@^0.3.27":
+  version "0.3.27"
+  resolved "https://registry.yarnpkg.com/@fonoster/storage/-/storage-0.3.27.tgz#3836f064cc9db77dba16ddcdc357ac2494c7519e"
+  integrity sha512-LyCSv9FqWVCrcYg/z9NOvhu/3CTeLxsyU3vOgIoCQr34kqccip/p7iYbAWHM5O4OBgcaIf6gjFbz/BkSQMMhxw==
+  dependencies:
+    "@fonoster/auth" "^0.3.27"
+    "@fonoster/certs" "^0.3.27"
+    "@fonoster/common" "^0.3.27"
+    "@fonoster/core" "^0.3.27"
+    "@fonoster/errors" "^0.3.27"
+    "@fonoster/logger" "^0.3.27"
+    "@grpc/grpc-js" "^1.3.7"
+    "@opentelemetry/api" "^1.0.4"
+    bson-objectid "^2.0.2"
+    google-protobuf "^3.17.0"
+    grpc-promise "^1.4.0"
+    minio "^7.0.18"
+    sync "^0.2.5"
+    tar "^6.1.0"
+    walk "^2.3.14"
+
 "@fonoster/users@^0.3.12", "@fonoster/users@^0.3.23":
   version "0.3.23"
   resolved "https://registry.yarnpkg.com/@fonoster/users/-/users-0.3.23.tgz#be88c7f1eb849312a3d5faa3079a5f89412db0a9"
@@ -704,6 +1011,24 @@
     "@fonoster/core" "^0.3.23"
     "@fonoster/errors" "^0.3.23"
     "@fonoster/logger" "^0.3.23"
+    "@grpc/grpc-js" "^1.3.7"
+    "@opentelemetry/api" "^1.0.4"
+    bcrypt "^5.0.1"
+    bson-objectid "^2.0.2"
+    google-protobuf "^3.17.0"
+    grpc-promise "^1.4.0"
+
+"@fonoster/users@^0.3.27":
+  version "0.3.27"
+  resolved "https://registry.yarnpkg.com/@fonoster/users/-/users-0.3.27.tgz#00f014c07edcba3d10545c3d94393cc1b488df13"
+  integrity sha512-EpgGpHozaVzXXFlMMK7nFD0yZ3+8Vqh4peksr8lQz+yGPB7cpQaSEEWgKjiuhaJz+00EL8j2eZmP8s8/dy8XBg==
+  dependencies:
+    "@fonoster/auth" "^0.3.27"
+    "@fonoster/certs" "^0.3.27"
+    "@fonoster/common" "^0.3.27"
+    "@fonoster/core" "^0.3.27"
+    "@fonoster/errors" "^0.3.27"
+    "@fonoster/logger" "^0.3.27"
     "@grpc/grpc-js" "^1.3.7"
     "@opentelemetry/api" "^1.0.4"
     bcrypt "^5.0.1"
@@ -5889,6 +6214,11 @@ phone@^3.1.31:
   version "3.1.37"
   resolved "https://registry.yarnpkg.com/phone/-/phone-3.1.37.tgz#c8adf7e9405260989ba3eeb91093619917ece058"
   integrity sha512-DV7+e8TkH1SHITfzayRVa4X6hRzIOX/Ptr7S2NhoetbeaZ6Sw330UO2gtyP8+TWj+KpoCfRJn2d6cFUO2jH5jw==
+
+phone@^3.1.37:
+  version "3.1.41"
+  resolved "https://registry.yarnpkg.com/phone/-/phone-3.1.41.tgz#c02ee8bbb78707b81ec5c286df32b81c6234d389"
+  integrity sha512-sjYk1DdjYqSbcfYyeHQ6FNXr2RH7gHtkQflyleSBQ0V83db3tO9sXHhsr5WyYdsXaOW2tBg4p+P8HVgwFRJp+Q==
 
 picocolors@^1.0.0:
   version "1.0.0"
