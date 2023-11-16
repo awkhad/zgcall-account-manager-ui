@@ -8,7 +8,6 @@ on:
         type: choice
         description: Select environment
         options:
-        - console.fonoster.net
         - console.fonoster.io
 
 jobs:
